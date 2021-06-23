@@ -1,6 +1,7 @@
 version: "3.3"
 services:
         web:
+                image: egg-server_web
                 build: .
                 links:
                         - "mongodb:mongodb"
@@ -12,6 +13,8 @@ services:
                 image: mongo
                 ports:
                         - "27017:27017"
+                volumes: 
+                        - "./mongodb/data:/data/db"
         frontend:
                 image: egg-client
                 ports:
