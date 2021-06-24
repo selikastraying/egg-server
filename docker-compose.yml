@@ -19,5 +19,3 @@ services:
                 image: egg-client
                 ports:
                         - "3000:3000"
-                links:
-                        - "web:web"
