@@ -30,10 +30,39 @@ module.exports = appInfo => {
 
   config.mongoose = {
     client: {
-      url: 'mongodb://mongodb/local',
-      // url: 'mongodb://127.0.0.1/local',
+      // url: 'mongodb://mongodb/local',
+      url: 'mongodb://127.0.0.1/local',
       options: { useUnifiedTopology: true },
     },
+  };
+
+  config.view = {
+    mapping: {
+      '.html': 'nunjucks',
+      // '.js': 'assets',
+    },
+  };
+
+  // config.assets = {
+  //   devServer: {
+  //     debug: true,
+  //     command: 'roadhog dev',
+  //     port: 8000,
+  //     env: {
+  //       APP_ROOT: `${appInfo.baseDir}/app/web`,
+  //       BROWSER: 'none',
+  //       ESLINT: 'none',
+  //       SOCKET_SERVER: 'http://127.0.0.1:8000',
+  //       PUBLIC_PATH: 'http://127.0.0.1:8000',
+  //     },
+  //   },
+  // };
+
+  config.static = {
+    prefix: '/',
+    dir: [
+      `${appInfo.baseDir}/app/view`,
+    ],
   };
 
   config.security = {

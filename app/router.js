@@ -10,4 +10,5 @@ module.exports = app => {
   // router.get('/update', controller.home.update);
   // router.get('/delete', controller.home.delete);
   router.resources('posts', '/api/posts', controller.posts);
+  router.get('/index', controller.home.index);
 };
